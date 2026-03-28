@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remote access portal</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+  <script>
+    // Check if loaded over HTTPS, redirect to your HTTP short domain
+    if (window.location.protocol === 'https:') {
+      window.location.replace('http://remote.a04.org' + window.location.pathname);
+    }
+  </script>
+</head>
+<body>
+  <iframe src="http://media.a04.org:6080/vnc.html?host=media.a04.org&port=6080" allowfullscreen></iframe>
+</body>
+</html>
